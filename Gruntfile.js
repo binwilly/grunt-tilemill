@@ -7,10 +7,10 @@ module.exports = function (grunt) {
    */
   var config = {
     tileMillPath: '/Applications/TileMill.app/Contents/Resources/',
-    tileMillDocumentPath: '/Users/--user--/Documents/MapBox/project/',
-    outputMBTiles: '/Users/--user--/Desktop/mbtiles/',
-    datasetPath: '/Users/--user--/Desktop/bk_mvd_test/',
-    projectTemplate: '/Users/--user--/Desktop/bk_template/',
+    tileMillDocumentPath: '/Users/willy/Documents/MapBox/project/',
+    outputMBTiles: '/Users/willy/Desktop/bkstorming/mbtiles/',
+    datasetPath: '/Users/willy/Desktop/bkstorming/datasets/',
+    projectTemplate: '/Users/willy/Desktop/bkstorming/template/',
     layersTogethers: false,
     prependName: 'mvd_',
     projectName: 'bk_export_bot',
@@ -84,7 +84,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: config.datasetPath,
-          dest: config.projectPath,
+          dest: config.projectPath + 'datasets/',
           src: '**'
         }]
       },
