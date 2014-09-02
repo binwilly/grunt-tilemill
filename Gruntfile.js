@@ -7,14 +7,14 @@ module.exports = function (grunt) {
    */
   var config = {
     tileMillPath: '/Applications/TileMill.app/Contents/Resources/',
-    tileMillDocumentPath: '/Users/willy/Documents/MapBox/project/',
-    outputMBTiles: '/Users/willy/Desktop/bkstorming/mbtiles/',
-    datasetPath: '/Users/willy/Desktop/bkstorming/datasets/',
-    projectTemplate: '/Users/willy/Desktop/bkstorming/template/',
+    tileMillDocumentPath: '/Users/--user--/Documents/MapBox/project/',
+    outputMBTiles: '/Users/--user--/Desktop/bkstorming/mbtiles/',
+    datasetPath: '/Users/--user--/Desktop/bkstorming/datasets/',
+    projectTemplate: '/Users/--user--/Desktop/bkstorming/template/',
     layersTogethers: false,
-    prependName: 'mvd_',
+    prependName: '',
     projectName: 'bk_export_bot',
-    syncAccount: 'binwilly',
+    syncAccount: '--user--',
     upload: false
   };
 
@@ -154,6 +154,8 @@ module.exports = function (grunt) {
   grunt.registerTask('export', function (upload) {
     var projectConfig = grunt.file.readJSON(config.projectPath + 'project.mml', {encoding:"utf8"}),
         layers = projectConfig.Layer;
+
+    config.prependName = grunt.option('prependName') || '';
 
     // Set true to upload after export mbtiles.    
     if (upload != null)
